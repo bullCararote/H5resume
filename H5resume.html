@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title</title>
+    <link rel = "stylesheet" href = "css/swiper-3.4.2.min.css">
+    <link rel = "stylesheet" href = "css/index.min.css">
+    <!--prefixfree : 设置前缀的插件-->
+    <script src = 'js/prefixfree.min.js'></script>
+    <!-- rem -->
+    <script>
+        // 根据当前设备宽度,动态计算出REM换算比例,实现页面中元素的等比缩放
+        ~function(window){
+               let computedREM = function(){
+                   let winW = document.documentElement.clientWidth,
+                       desW = 640;
+                   if(winW >= desW){
+                       document.documentElement.style.fontSize = '100px';
+                       return;
+                   }
+                   document.documentElement.style.fontSize = 100 / desW * winW + 'px';
+               }
+               computedREM();
+               window.addEventListener('resize',computedREM);
+        }(window);
+    </script>
+</head>
+<body>
+     <!--外面套一层main-box:控制当前页面最大宽度,防止把做好的页面在pc端预览的时候满屏展示，这样字体和盒子大小不被肆意拉伸-->
+     <main class="mainBox">
+            <!--loading-->
+            <section class="loadingBox">
+                  <div class="title">
+                      <h1>姚成健</h1>
+                      <h2>简历正在加载中……</h2>
+                  </div>
+                  <div class="progress">
+                      <div class="current"></div>
+                  </div>
+            </section>
+            <!-- phone -->
+            <section class = "phoneBox">
+                <h2>
+                    <p>姚成健</p>
+                    <span>00:00</span>
+                </h2>
+                <div class = "answer">
+                    <div class="markMove"></div>
+                    <a href = "javascript:;" class = 'markLink'></a>
+                </div>
+                <div class = "hang">
+                    <a href = "javascript:;" class = 'markLink'></a>
+                </div>
+                <!--audio-->
+                <audio src = "audio/bell1.mp3"  loop preload = 'none' id = 'answerBell'></audio>
+                <audio src = "audio/tmp.mp3" preload = 'none' id = 'introduction'></audio>
+            </section>
+            <!--message-->
+            <section class = "messageBox" style = 'dispay:none'>
+                <ul class = "wrapper clearfix">
+                    <li class = 'self' style = 'margin-top:.4rem'>
+                        <i class = "arrow"></i>
+                        <img src = "img/zf_messageStudent.png" alt = "" class = 'pic'>
+                        面试官您好,我叫姚成健,来自于广东湛江,目前没有工作经验,期望薪资是3k
+                    </li>
+                    <li class = "inter">
+                        <i class = "arrow"></i>
+                        <img src = "img/zf_messageLogo.png" alt = "" class = "pic">
+                        哇塞!好牛X啊!介绍自己的专业技能吧?
+                    </li>
+                    <!--<li class = 'self'>-->
+                        <!--<i class = "arrow"></i>-->
+                        <!--<img src = "img/zf_messageStudent.png" alt = "" class = 'pic'>-->
+                        <!--好的,马上介绍~~~~-->
+                    <!--</li>-->
+                    <li class = 'self'>
+                        <i class = "arrow"></i>
+                        <img src = "img/zf_messageStudent.png" alt = "" class = 'pic'>
+                        1.能够熟练利用 HTML5+CSS，JavaScript 对网页进行开发，理解 W3C 标准，同时对 盒子模型，文档流，DOM操作等重要知识点有一定见解；
+                        2. 熟悉Javascript、css3和html5，且能熟练运用JQuery框架实现网页常用特效，掌 握面向对象编程思想；
+                        3. 熟悉DW，HbuilderX，WebStorm 等开发工具；
+                        4. 熟悉ES5/ES6，对原型，闭包，继承等有自己的理解等；
+                        5. 了解移动端响应式布局开发，@media 媒体查询，viewport 理论基础，HASH 路由处 理模型，zepto 移动端类库
+                    </li>
+                    <li class = "inter">
+                    <i class = "arrow"></i>
+                    <img src = "img/zf_messageLogo.png" alt = "" class = "pic">
+                        好的,我大概知道你的情况了。你目前是住在哪里，你对前端工程师的理解是?目前这行的发展前景?
+                   </li>
+                    <li class = 'self'>
+                        <i class = "arrow"></i>
+                        <img src = "img/zf_messageStudent.png" alt = "" class = 'pic'>
+                        嗯..我目前住在白云区,Web前端是有网页设计与制作发展而来的，随着工作细化，需要有人完成美工图到网页的制作，
+                        从而出现Web前端开发这个词。还有目前IT在中国发张势头很好，每逢高校毕业，IT企业，公司都会招很多人才，人们
+                        生活离不开互联网，中国互联网会有自己的一番天地的……
+                    </li>
+                    <li class = "inter">
+                        <i class = "arrow"></i>
+                        <img src = "img/zf_messageLogo.png" alt = "" class = "pic">
+                        嗯嗯!看来你对这行还是挺理解的,我们的工作是995,弹性上班,周六日有时候公司有事也要回来加一下班这些,可以吗?
+                    </li>
+                    <li class = 'self'>
+                        <i class = "arrow"></i>
+                        <img src = "img/zf_messageStudent.png" alt = "" class = 'pic'>
+                        当然可以啦,愿意听从领导和公司安排
+                    </li>
+                    <li class = "inter">
+                        <i class = "arrow"></i>
+                        <img src = "img/zf_messageLogo.png" alt = "" class = "pic">
+                        那就好,那你明天过来实习吧!
+                    </li>
+                    <li class = 'self'>
+                        <i class = "arrow"></i>
+                        <img src = "img/zf_messageStudent.png" alt = "" class = 'pic'>
+                        好的!谢谢您啦,感谢公司给我这个宝贵的机会
+                    </li>
+                    <li class = "inter">
+                        <i class = "arrow"></i>
+                        <img src = "img/zf_messageLogo.png" alt = "" class = "pic">
+                        没事，小事
+                    </li>
+                    <li class = 'self'>
+                        <i class = "arrow"></i>
+                        <img src = "img/zf_messageStudent.png" alt = "" class = 'pic'>
+                        哈哈-.-明天会准时上班的,能应聘这个岗位，实属我的万幸，我定立足马力为公司服务，全力以赴，不负所托!
+                    </li>
+                </ul>
+                <div class = "keyBoard">
+                    <span></span> <!-- 好的马上介绍! -->
+                    <a href = "javascript:;" class = "submit"></a>
+                </div>
+                <audio src = "audio/music.mp3" preload = "none" loop id = 'demon'></audio>
+            </section>
+             <!--CUBE-->
+            <section class="cubeBox">
+             <ul class="cube">
+                 <li><img src="img/zf_cube1.jpg" alt=""></li>
+                 <li><img src="img/zf_cube2.jpg" alt=""></li>
+                 <li><img src="img/zf_cube3.jpg" alt=""></li>
+                 <li><img src="img/zf_cube4.jpg" alt=""></li>
+                 <li><img src="img/zf_cube5.jpg" alt=""></li>
+                 <li><img src="img/zf_cube6.jpg" alt=""></li>
+             </ul>
+             <img src="img/zf_cubeTip.png" alt="" class="tip">
+            </section>
+
+            <!-- detail -->
+            <section class = 'detailBox'>
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <!-- page1 -->
+                        <div class="swiper-slide page1">
+                            <dl>
+                                <dt>学习技能</dt>
+                                <dd><em>01</em><a href="#">HTML5+CSS3</a></dd>
+                                <dd><em>02</em><a href="#">JavaScript(闭包,原型,类,高级单例模式,堆栈内存以及this处理)</a></dd>
+                                <dd><em>03</em><a href="#">Jquery</a></dd>
+                                <dd><em>04</em><a href="#">Zepto</a></dd>
+                                <dd><em>05</em><a href="#">Ajax</a></dd>
+                                <dd><em>06</em><a href="#">IDE：WebStorm,HbuilderX……</a></dd>
+                                <dd><em>07</em><a href="#">ES5/ES6</a></dd>
+                                <dd><em>08</em><a href="#">了解REM响应式布局+移动端响应式布局开发</a></dd>
+                                <dd><em>09</em><a href="#">JS中同步异步编程及Promise设计模式</a></dd>
+                                <dd><em>10</em><a href="#">了解swiper滑动库</a></dd>
+                            </dl>
+                        </div>
+                        <!-- page2 -->
+                        <div class="swiper-slide page2">
+                            <h2>个人标签</h2>
+                            <img src = "img/zf_course1.png" alt = "">
+                            <img src = "img/zf_course2.png" alt = "">
+                            <img src = "img/zf_course3.png" alt = "">
+                            <img src = "img/zf_course4.png" alt = "">
+                            <img src = "img/zf_course5.png" alt = "">
+                            <img src = "img/zf_course6.png" alt = "">
+                            <img src = "img/zf_course.png" alt = "">
+                        </div>
+                        <div class="swiper-slide"></div>
+                        <div class="swiper-slide"></div>
+                        <div class="swiper-slide"></div>
+                        <div class="swiper-slide"></div>
+                    </div>
+                </div>
+            </section>
+     </main>
+<!-- import js -->
+<script src = 'js/zepto.min.js'></script>
+<script src = 'js/swiper-3.4.2.jquery.min.js'></script>  <!-- 实现3d滑动插件 -->
+<script src = 'js/makisu.min.js'></script>  <!-- 实现折叠的插件 -->
+<script src = 'js/index.js'></script>
+</body>
+</html>
