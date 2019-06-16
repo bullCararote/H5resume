@@ -6,7 +6,7 @@ let loadingRender = (function(){
     // run : 预加载图片
     let n = 0,
         len = imgData.length;
-    let run = function run(){
+    let run = function run(callback){
         imgData.forEach(item => {
             let tempImg = new Image();
             tempImg.onload = () => {
