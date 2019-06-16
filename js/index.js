@@ -6,7 +6,7 @@ let loadingRender = (function(){
     // run : 预加载图片
     let n = 0,
         len = imgData.length;
-    let run = function run(callback){
+    let run = function run(){
         imgData.forEach(item => {
             let tempImg = new Image();
             tempImg.onload = () => {
@@ -14,8 +14,9 @@ let loadingRender = (function(){
                 $current.css('width',++n / len * 100 + '%');
                 //=>加载完成:执行回调函数(让当前loading页面消失)
                 if(n === len){
-                   clearTimeout(maxDelay);
-                   callback && callback();
+//                    clearTimeout(maxDelay);
+//                    callback && callback();
+                     $loadingBox.remove();
                 }
             }
             tempImg.src = item;
@@ -24,18 +25,18 @@ let loadingRender = (function(){
 
     /*  maxdelay : 设置最长等待时间(假设10s,到达10s我们看加载多少了,如果已经达到了90%以上,
     我们可以正常访问内容,如果不足这个比例,直接提示用户当前用户网络状态不接,稍后重试) */
-    let delayTimer = null;
-    let maxDelay = function maxDelay(callback){
-        delayTimer = setTimeout(() => {
-            if(n / len >= 0.9){
-                callback && callback();
-                return;
-            }
-            alert('非常遗憾,当前您的网络状况不佳,请稍后在试!');
-        //这里超过10s,让它关闭当前页面
-        $loadingBox.remove();
-        },10000);
-    }
+//     let delayTimer = null;
+//     let maxDelay = function maxDelay(callback){
+//         delayTimer = setTimeout(() => {
+//             if(n / len >= 0.9){
+//                 callback && callback();
+//                 return;
+//             }
+//             alert('非常遗憾,当前您的网络状况不佳,请稍后在试!');
+//         //这里超过10s,让它关闭当前页面
+//         $loadingBox.remove();
+//         },10000);
+//     }
 
     // done : 完成
     let done = function done(){
