@@ -14,9 +14,9 @@ let loadingRender = (function(){
                 $current.css('width',++n / len * 100 + '%');
                 //=>加载完成:执行回调函数(让当前loading页面消失)
                 if(n === len){
-//                    clearTimeout(maxDelay);
-//                    callback && callback();
-                     $loadingBox.remove();
+                   clearTimeout(maxDelay);
+                   callback && callback();
+         
                 }
             }
             tempImg.src = item;
@@ -51,7 +51,7 @@ let loadingRender = (function(){
         init : function(){
             $loadingBox.css('display','block');
             run(done);
-            maxDelay(done);
+//             maxDelay(done);
         }
     }
 })();
