@@ -179,7 +179,7 @@ let messageRender = (function(){
                     }
                     $textInp[0].innerHTML += str[textStep];
                     textStep++;
-                },150);
+                },500);
         });
     }
 
